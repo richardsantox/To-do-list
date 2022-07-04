@@ -4,6 +4,7 @@ import { Item } from '../../types/item'
 
 type Props = {
     item: Item
+    onChange: (id: number, done: boolean) => void
 }
 
 export const ListItem = ({ item }: Props) => {
@@ -16,7 +17,7 @@ export const ListItem = ({ item }: Props) => {
                 checked={isChecked}
                 onChange={e => setIsChecked(e.target.checked)}
             />
-            <label>{item.name}</label>
+            <label>{item.name} - {item.done.toString()}</label>
         </C.Cotainer>
     ); 
 
